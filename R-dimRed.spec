@@ -4,16 +4,18 @@
 #
 Name     : R-dimRed
 Version  : 0.1.0
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/dimRed_0.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dimRed_0.1.0.tar.gz
 Summary  : A Framework for Dimensionality Reduction
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-DRR
+Requires: R-RANN
 Requires: R-diffusionMap
 Requires: R-fastICA
 BuildRequires : R-DRR
+BuildRequires : R-RANN
 BuildRequires : R-diffusionMap
 BuildRequires : R-fastICA
 BuildRequires : clr-R-helpers
@@ -30,11 +32,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521192562
+export SOURCE_DATE_EPOCH=1521221629
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521192562
+export SOURCE_DATE_EPOCH=1521221629
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
