@@ -4,13 +4,15 @@
 #
 Name     : R-dimRed
 Version  : 0.2.2
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/dimRed_0.2.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dimRed_0.2.2.tar.gz
 Summary  : A Framework for Dimensionality Reduction
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-highr
+Requires: R-CVST
+Requires: R-kernlab
+BuildRequires : R-CVST
 BuildRequires : R-DRR
 BuildRequires : R-RANN
 BuildRequires : R-diffusionMap
@@ -18,6 +20,7 @@ BuildRequires : R-fastICA
 BuildRequires : R-highr
 BuildRequires : R-igraph
 BuildRequires : R-keras
+BuildRequires : R-kernlab
 BuildRequires : R-rlang
 BuildRequires : R-tinytex
 BuildRequires : buildreq-R
@@ -35,10 +38,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552905367
+export SOURCE_DATE_EPOCH=1556494786
 
 %install
-export SOURCE_DATE_EPOCH=1552905367
+export SOURCE_DATE_EPOCH=1556494786
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  dimRed || :
+R CMD check --no-manual --no-examples --no-codoc dimRed || :
 
 
 %files
