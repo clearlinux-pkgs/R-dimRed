@@ -4,7 +4,7 @@
 #
 Name     : R-dimRed
 Version  : 0.2.3
-Release  : 36
+Release  : 37
 URL      : https://cran.r-project.org/src/contrib/dimRed_0.2.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dimRed_0.2.3.tar.gz
 Summary  : A Framework for Dimensionality Reduction
@@ -12,17 +12,14 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-DRR
 Requires: R-magrittr
-BuildRequires : R-CVST
+Requires: R-tinytex
 BuildRequires : R-DRR
 BuildRequires : R-RANN
 BuildRequires : R-diffusionMap
 BuildRequires : R-fastICA
-BuildRequires : R-keras
-BuildRequires : R-kernlab
 BuildRequires : R-magrittr
 BuildRequires : R-tinytex
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 techniques from R packages and a common
@@ -30,21 +27,22 @@ techniques from R packages and a common
 
 %prep
 %setup -q -c -n dimRed
+cd %{_builddir}/dimRed
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571817755
+export SOURCE_DATE_EPOCH=1589774408
 
 %install
-export SOURCE_DATE_EPOCH=1571817755
+export SOURCE_DATE_EPOCH=1589774408
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
