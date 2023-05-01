@@ -4,7 +4,7 @@
 #
 Name     : R-dimRed
 Version  : 0.2.6
-Release  : 59
+Release  : 60
 URL      : https://cran.r-project.org/src/contrib/dimRed_0.2.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dimRed_0.2.6.tar.gz
 Summary  : A Framework for Dimensionality Reduction
